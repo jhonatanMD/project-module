@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Product API
+  description: API for managing products.
+  version: 1.0.0
+tags:
+  - name: Product
+    description: Operations related to products
+paths:
+  /product:
+    get:
+      summary: Get product information
+      description: Fetches product information and logs the customer name.
+      operationId: getProduct
+      tags:
+        - Product
+      responses:
+        '200':
+          description: Successful response with product information
+          content:
+            application/json:
+              schema:
+                type: string
+  /product/list:
+    get:
+      summary: Get list of products
+      description: Fetches a list of all available products.
+      operationId: getProducts
+      tags:
+        - Product
+      responses:
+        '200':
+          description: Successful response with a list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string

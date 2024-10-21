@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Customer API
+  description: API for managing customers.
+  version: 1.0.0
+tags:
+  - name: Customer
+    description: Operations related to customers
+paths:
+  /customer:
+    get:
+      summary: Get customer information
+      description: Fetches customer information.
+      operationId: getCustomer
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response with customer information
+          content:
+            application/json:
+              schema:
+                type: string
+  /customer/list:
+    get:
+      summary: Get list of customers
+      description: Fetches a list of all available customers.
+      operationId: getCustomers
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: Successful response with a list of customers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+components:
+  schemas:
+    CustomerDto:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
